@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D1C49FC-1A16-4888-9529-29E6576A01FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CaseStudies</RootNamespace>
+    <AssemblyName>CaseStudies</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NMF.Expressions">
+      <HintPath>..\lib\NMF.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="NMF.Expressions.Linq">
+      <HintPath>..\lib\NMF.Expressions.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="NMF.Transformations">
+      <HintPath>..\lib\NMF.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="NMF.Transformations.Core">
+      <HintPath>..\lib\NMF.Transformations.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NMF.Transformations.Sample">
+      <HintPath>..\lib\NMF.Transformations.Sample.exe</HintPath>
+    </Reference>
+    <Reference Include="NMF.Utilities">
+      <HintPath>..\lib\NMF.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Case1\Baseline\PersonsToFamilyRelationsBaseline.cs" />
+    <Compile Include="Case1\LiTra\PersonsToFamilyRelationsLiTra.cs" />
+    <Compile Include="Case1\NMF\PersonsToFamilyRelationsNMF.cs" />
+    <Compile Include="Case2\Baseline\ArithmeticTreeToConstBaseline.cs" />
+    <Compile Include="Case2\LiTra\ArithmeticTreeToConstLiTra.cs" />
+    <Compile Include="Case2\NMF\ArithmeticTreeToConstNMF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LiTra\LiTra.csproj">
+      <Project>{87b244ac-4e90-405e-bf37-6395b14b8221}</Project>
+      <Name>LiTra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Structures\Structures.csproj">
+      <Project>{e5a16063-81c2-4337-9926-f900d86cd8c2}</Project>
+      <Name>Structures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
